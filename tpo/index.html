@@ -117,9 +117,9 @@
           <h1 class="title is-2 publication-title">Triple Preference Optimization: Achieving Better Alignment with Less Data in a Single Step Optimization</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://agneetchatterjee.com/">Amir Saeidi</a>,</span>
+              <a href="https://sahsaeedi.github.io/">Amir Saeidi</a>,</span>
             <span class="author-block">
-              <a href="">Shivanshu Verma</a>,</span>
+              <a href="https://scholar.google.com/citations?user=huOeftkAAAAJ&hl=en">Shivanshu Verma</a>,</span>
               <span class="author-block">
                 <a href="">Aswin RRV</a>,</span>
 			<span class="author-block">
@@ -170,17 +170,17 @@
       <p style="text-align: justify;">Large Language Models (LLMs) perform well across diverse tasks, but aligning them with human demonstrations is challenging. 
         Recently, Reinforcement Learning (RL)-free methods like Direct Preference Optimization (DPO) have emerged, offering improved stability and scalability while retaining competitive performance relative to RL-based methods.
         However, while RL-free methods deliver satisfactory performance, they require significant data to develop a robust Supervised Fine-Tuned (SFT) model and an additional step to fine-tune this model on a preference dataset, which constrains their utility and scalability.
-        In this paper, we introduce Triple Preference Optimization (TPO), a new preference learning method designed to align an LLM with three preferences without requiring a separate SFT step and using considerably less data.
+        In this paper, we introduce <b>Triple Preference Optimization (TPO)</b>, a new preference learning method designed to align an LLM with three preferences without requiring a separate SFT step and using considerably less data.
         Through a combination of practical experiments and theoretical analysis, we show the efficacy of TPO as a single-step alignment strategy. 
         Specifically, we fine-tuned the Phi-2 (2.7B) and Mistral (7B) models using TPO directly on the UltraFeedback dataset, achieving superior results compared to models aligned through other methods such as SFT, DPO, KTO, IPO, CPO, and ORPO.
-        Moreover, the performance of TPO without the SFT component led to notable improvements in the MT-Bench score, with increases of +1.27 and +0.63 over SFT and DPO, respectively. 
-        Additionally, TPO showed higher average accuracy, surpassing DPO and SFT by 4.2% and 4.97% on the Open LLM Leaderboard benchmarks.</p>
+        Moreover, the performance of TPO without the SFT component led to notable improvements in the MT-Bench score, with increases of <b>+1.27</b> and <b>+0.63</b> over SFT and DPO, respectively. 
+        Additionally, TPO showed higher average accuracy, surpassing DPO and SFT by <b>4.2%</b> and <b>4.97%</b> on the Open LLM Leaderboard benchmarks.</p>
         <div class="hero-body" style='margin-top:-25px;margin-bottom:-25px'>
 		  <center>
-		  <img src="./static/images/demonstrations2.png"
+		  <img src="./static/images/TPO-demonstration2.png"
 					 class="interpolation-image" width=100%/></center>
           <p class="content has-text-justified" style='width:100%'>
-            (a) During the SFT step, a pre-trained model is fine-tuned to align with human expectations. (b) To further enhance the performance of the SFT model, we train it with human preferences using reinforcement learning. (c) Alternatively, we can directly align an SFT model with human preferences using RL-free methods such as DPO. (d) In TPO, we merge preference optimization with gold standard response learning, enabling direct fine-tuning of a pre-trained model based on three preferences.
+            <b>(a)</b> During the SFT step, a pre-trained model is fine-tuned to align with human expectations. <b>(b)</b> To further enhance the performance of the SFT model, we train it with human preferences using reinforcement learning. <b>(c)</b> Alternatively, we can directly align an SFT model with human preferences using RL-free methods such as DPO. <b>(d)</b> In TPO, we merge preference optimization with gold standard response learning, enabling direct fine-tuning of a pre-trained model based on three preferences.
 		  </p>		
         </div>
     </center>
