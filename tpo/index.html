@@ -67,6 +67,12 @@
   padding-top: 3px;
   padding-bottom: 3px;
 }
+
+.row {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Adjust the gap between images */
+        }
 </style>
 </head>
 <body>
@@ -108,14 +114,14 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">Triple Preference Optimization: Achieving Better Alignment with Less Data in a Signle Step Optimization</h1>
+          <h1 class="title is-2 publication-title">Triple Preference Optimization: Achieving Better Alignment with Less Data in a Single Step Optimization</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://sahsaeedi.github.io/">Amir Saeidi</a>,</span>
+              <a href="https://agneetchatterjee.com/">Amir Saeidi</a>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=huOeftkAAAAJ&hl=en">Shivanshu Verma</a>,</span>
+              <a href="">Shivanshu Verma</a>,</span>
               <span class="author-block">
-                <a href="https://3rdat.github.io">Aswin RRV</a>,</span>
+                <a href="">Aswin RRV</a>,</span>
 			<span class="author-block">
               <a href="https://www.public.asu.edu/~cbaral/">Chitta Baral</a></span>
 
@@ -161,7 +167,14 @@
       <div class="column is-max-desktop">
         <h2 class="title is-3">Abstract</h2>
     <center>
-      <p style="text-align: justify;">Large Language Models (LLMs) perform well across diverse tasks, but aligning them with human demonstrations is challenging. Recently, Reinforcement Learning (RL)-free methods like Direct Preference Optimization (DPO) have emerged, offering improved stability and scalability while retaining competitive performance relative to RL-based methods. However, while RL-free methods deliver satisfactory performance, they demand significant data to develop a robust Supervised Fine-Tuned (SFT) model and an additional step to fine-tune this model on a preference dataset, which constrains their utility and scalability. In this paper, we introduce Triple Preference Optimization (TPO), a new preference learning method designed to align an LLM with three preferences without requiring a separate SFT step and using considerably less data. Through a combination of practical experiments and theoretical analysis, we show the efficacy of TPO as a single-step alignment strategy. Specifically, we fine-tuned the Phi-2 (2.7B) and Mistral (7B) models using TPO directly on the UltraFeedback dataset, achieving superior results compared to models aligned through other methods such as SFT, DPO, KTO, IPO, CPO, and ORPO. Moreover, the performance of TPO without the SFT component led to notable improvements in the MT-Bench score, with increases of +1.27 and +0.63 over SFT and DPO, respectively. Additionally, TPO showed higher average accuracy, surpassing DPO and SFT by 4.2% and 4.97% on the Open LLM Leaderboard benchmarks.</p>
+      <p style="text-align: justify;">Large Language Models (LLMs) perform well across diverse tasks, but aligning them with human demonstrations is challenging. 
+        Recently, Reinforcement Learning (RL)-free methods like Direct Preference Optimization (DPO) have emerged, offering improved stability and scalability while retaining competitive performance relative to RL-based methods.
+        However, while RL-free methods deliver satisfactory performance, they require significant data to develop a robust Supervised Fine-Tuned (SFT) model and an additional step to fine-tune this model on a preference dataset, which constrains their utility and scalability.
+        In this paper, we introduce Triple Preference Optimization (TPO), a new preference learning method designed to align an LLM with three preferences without requiring a separate SFT step and using considerably less data.
+        Through a combination of practical experiments and theoretical analysis, we show the efficacy of TPO as a single-step alignment strategy. 
+        Specifically, we fine-tuned the Phi-2 (2.7B) and Mistral (7B) models using TPO directly on the UltraFeedback dataset, achieving superior results compared to models aligned through other methods such as SFT, DPO, KTO, IPO, CPO, and ORPO.
+        Moreover, the performance of TPO without the SFT component led to notable improvements in the MT-Bench score, with increases of +1.27 and +0.63 over SFT and DPO, respectively. 
+        Additionally, TPO showed higher average accuracy, surpassing DPO and SFT by 4.2% and 4.97% on the Open LLM Leaderboard benchmarks.</p>
         <div class="hero-body" style='margin-top:-25px;margin-bottom:-25px'>
 		  <center>
 		  <img src="./static/images/demonstrations2.png"
@@ -182,52 +195,80 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content" style="margin-top:-70px">
     <h2 class="title">Experiments</h2>
-    <p>We evaluated TPO with SFT, DPO, KTO, IPO, CPO and ORPO on three different scenearios. 1) Alinging an SFT model fine-tuned on 10K data, 2) Algining an SFT model fine-tuned on 200K data, and 3) Fine-tunining a pre-trained model directly.
-    </p>
-    <h3 class="">Scenario 1</h3>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-max-desktop">
-        <h2 class="title is-3">Abstract</h2>
-    <center>
-      <p style="text-align: justify;">
-        
-      </p>
-        <div class="hero-body" style='margin-top:-25px;margin-bottom:-25px'>
-		  <center>
-		  <img src="./static/images/#"
-					 class="interpolation-image" width=100%/></center>
-          <p class="content has-text-justified" style='width:100%'>
-
-		      </p>		
-        </div>
-    </center>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content" style="margin-top:-70px">
-    <h2 class="title">Sceneario 1: Aligning with SFT</h2>
     <p>
-        
+      We assessed the performance of <b>TPO</b> alongside SFT, DPO, KTO, IPO, CPO, and ORPO across ten different benchmarks in three distinct scenarios: <b>1)</b> Aligning an SFT model fine-tuned on 10K data, <b>2)</b> Aligning an SFT model fine-tuned on 200K data, and <b>3)</b> Directly fine-tuning a pre-trained model.
     </p>
+    <h3 class="">1. Aligning an SFT Model</h3>
+
+    <div><center>
+		  <img src="./static/images/Leaderboard-SFT.png" class="" width="100%"/> </center> 
+
+      <p class="content has-text-justified" style='width:100%'><br>
+        Comparing TPO's performance with other alignment methods reveals that the <b>Mistral+TPO</b> model exhibits comparable performance across different benchmarks and, on average, outperforms other methods. In particular, <b>Mistral+TPO</b> performed remarkably on the TruthfulQA benchmark. It's worth noting that the <b>Mistral+TPO</b> model is directly trained with TPO, which contributes to its superior performance. Additionally, for all benchmarks, accuracy is the metric used to gauge performance.
+      </p>	<br>
+    </div>
+      <div><center>
+      <img src="./static/images/BB-SFT.png" class="" width="100%" /></center>
+        <br>
+      <p class="content has-text-justified" style='width:100%'>
+        In our comparison of TPO with other alignment methods across more benchmarks, <b>Mistral+SFT+TPO</b> and <b>Mistral+TPO</b> emerge as the top performer, surpassing other methods in MT-Bench and BB-causal, BB-sports, OpenBookQA. For BB-causal, BB-sports, BB-formal, and OpenBookQA, performance is evaluated based on accuracy, while MT-Bench uses a scoring system generated by GPT-4.
+    </p>
+    </div>
+    <br>
+    <div><center>
+      <img src="./static/images/Phi2-SFT.png" class="" width="80%" /></center>
+        <br>
+      <p class="content has-text-justified" style='width:100%'>
+        The comparison of Phi-2's performance when aligned with various methods on MT-Bench shows that <b>Phi-2+TPO</b> surpasses other alignment techniques.
+    </p>
+    <br>
+    </div>
+
+    <div><center>
+      <img src="./static/images/WithSFT.png" class="" width="50%" /></center>
+        <br>
+      <p class="content has-text-justified" style='width:100%'>
+        Comparison of the performance of various alignment methods on different SFT models using the MT-Bench. Notably, the score for Mistral+SFT trained on 10K data is <b>4.2</b>, while the score for Mistral+SFT trained on 200K data is <b>5.94</b> and for <b>Mistral+TPO</b> on 10K is <b>6.66</b>.
+    </p>
+    </div>
+	
+    <h3 class="">2. Aligning without SFT Model</h3>
+
+    <div><center>
+		  <img src="./static/images/Without-SFT.png" class="" width="50%"/> </center> 
+
+      <p class="content has-text-justified" style='width:100%'><br>
+        Comparison of the performance of various alignment methods on MT-Bench.
+      </p>	<br>
+    </div>
+
+
   </div>
 </section>
+
 
 
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content" style="margin-top:-70px">
+  <div class="container is-max-desktop content" style="margin-top:-70px" >
     <h2 class="title">BibTeX</h2>
-    <pre><code></code></pre>
+    
+    <pre><code>@article{saeidi2024insights,
+        title={Insights into Alignment: Evaluating DPO and its Variants Across Multiple Tasks},
+        author={Saeidi, Amir and Verma, Shivanshu and Baral, Chitta},
+        journal={arXiv preprint arXiv:2404.14723},
+        year={2024}
+      }
+    </code></pre>
+    
   </div>
 </section>
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content" style="margin-top:-70px">
     <h2 class="title">Acknowledgement</h2>
-     
+    We thank the anonymous reviewers for constructive suggestions and the Research Computing (RC) at Arizona State University (ASU) for providing computing resources for experiments. We acknowledge support by a 2023 Spring Amazon Research Award (ARA).
     Template of this website is borrowed from <a href="https://nerfies.github.io/">nerfies</a> website.
 </code></pre>
   </div>
