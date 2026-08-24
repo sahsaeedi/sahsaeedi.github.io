@@ -196,9 +196,9 @@ h2.section-title {
 }
 
 .news-list {
-  list-style: disc;
+  list-style: none;
   margin: 0;
-  padding: 0 0 0 22px;
+  padding: 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
 }
 
@@ -209,8 +209,14 @@ h2.section-title {
   color: var(--text);
 }
 
+.news-date {
+  font-weight: 700;
+  font-size: 15.5px;
+  white-space: nowrap;
+}
+
 /* ============================================
-   Research / Papers
+   Publications / Papers
    ============================================ */
 .research-intro {
   color: var(--text-muted);
@@ -250,17 +256,28 @@ h2.section-title {
 .paper-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
 }
 
 .paper-card {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 18px;
-  padding: 12px;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 18px 4px 22px;
   background: none;
-  border: 1px solid #000;
+  border: 0;
+  border-bottom: 1px solid var(--border);
   border-radius: 0;
+  transition: background var(--transition);
+}
+
+.paper-card:hover {
+  background: #fafafa;
+}
+
+.paper-card:last-child {
+  border-bottom: 0;
 }
 
 .paper-thumb {
@@ -275,23 +292,26 @@ h2.section-title {
 .paper-thumb img {
   width: 100%;
   height: auto;
-  max-height: 110px;
+  max-height: 200px;
   object-fit: contain;
-  border-radius: var(--radius-sm);
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
 }
 
 .paper-info .paper-title {
   font-weight: 700;
-  font-size: 14px;
-  line-height: 1.35;
-  margin: 0 0 2px;
+  font-size: 16px;
+  line-height: 1.3;
+  margin: 0 0 5px;
   color: var(--text);
 }
 
 .paper-info .paper-authors {
   font-size: 13.5px;
-  color: var(--text);
-  margin: 0 0 2px;
+  color: var(--text-muted);
+  margin: 0 0 7px;
   line-height: 1.4;
 }
 
@@ -302,13 +322,19 @@ h2.section-title {
 }
 
 .paper-info .paper-venue {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  margin: 0 0 2px;
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+  background: #f2f2f2;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 1px 11px;
+  margin: 0 0 8px;
 }
 
 .paper-info .paper-links {
-  margin: 2px 0 0;
+  margin: 0;
   font-size: 13px;
 }
 
@@ -373,7 +399,7 @@ footer a {
   }
 
   .paper-thumb img {
-    max-height: 140px;
+    max-height: 260px;
   }
 
   .nav-links {
